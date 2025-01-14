@@ -4,7 +4,6 @@ let currentIndex = 0;
 let startY = 0;
 let isSwiping = false;
 
-// Function to update the slide focus
 function updateSlide() {
     slides.forEach((slide, index) => {
         if (index === currentIndex) {
@@ -14,21 +13,20 @@ function updateSlide() {
         }
     });
 
-    // Calculate the offset to position the current slide at the center
-    const offset = -currentIndex * (window.innerHeight*0.3 ); // 40px = margin
+    const offset = -currentIndex * (window.innerHeight*0.3 ); 
     swiper.style.transform = `translateY(${offset}px)`;
 }
 
-// Handle mouse down event
+
 document.addEventListener("mousedown", (e) => {
-    startY = e.clientY; // Record the starting Y position of the mouse
+    startY = e.clientY; 
     isSwiping = true;
 });
 
-// Handle mouse up event
+
 document.addEventListener("mouseup", (e) => {
     if (!isSwiping) return;
-    const endY = e.clientY; // Record the ending Y position of the mouse
+    const endY = e.clientY;
     const diffY = startY - endY;
 
     // Swipe up
@@ -44,7 +42,7 @@ document.addEventListener("mouseup", (e) => {
     isSwiping = false;
 });
 
-// Optional: Keyboard navigation
+
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowDown" && currentIndex < slides.length - 1) {
         currentIndex++;
@@ -55,5 +53,5 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// Initialize
+
 updateSlide();
