@@ -31,9 +31,7 @@ body {
   opacity: 0.5;
   border-radius: 10px;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-
-  transform: scale(0.8); /* Smaller 
-  zslides */
+  transform: scale(0.8);
 }
 .slide .box {
   height: 140px;
@@ -82,11 +80,5 @@ body {
   position: relative;
   padding: 20px;
   opacity: 1;
-  transform: scale(1); /* Enlarged active slide */
-}
-
-.slide.previous,
-.slide.next {
-  opacity: 0.7; /* Dimmed previous and next slides */
-  transform: scale(0.9); /* Slightly smaller than active */
+  transform: scale(1);
 }
